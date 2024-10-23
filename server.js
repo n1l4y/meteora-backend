@@ -19,8 +19,8 @@ app.use(requestIp.mw()); // Middleware to get client IP
 app.use("/api/auth", require("./routes/auth"));
 
 app.get("/", (req, res) => {
-  res.write(process.env.JWT_SECRET);
-  res.send("Backend Home!");
+  const message = `JWT Secret: ${process.env.JWT_SECRET} - Backend Home!`;
+  res.send(message);
 });
 
 const PORT = process.env.PORT || 5000;

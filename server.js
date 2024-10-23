@@ -19,6 +19,7 @@ app.use(requestIp.mw()); // Middleware to get client IP
 app.use("/api/auth", require("./routes/auth"));
 
 app.get("/", (req, res) => {
+  console.log(process.env.JWT_SECRET);
   res.send("Backend Home!");
 });
 
